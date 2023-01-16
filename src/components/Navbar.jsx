@@ -13,7 +13,12 @@ import { SearchBar } from "./SearchBar";
 export const Navbar = () => {
 	return (
 		<>
-			<Flex justifyContent="space-around" bg="black" alignItems="center">
+			<Flex
+				justifyContent="space-around"
+				bg="black"
+				alignItems="center"
+				fontFamily="Open Sans"
+			>
 				<Menu>
 					<MenuButton>
 						<Logo />
