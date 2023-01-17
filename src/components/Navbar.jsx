@@ -1,14 +1,7 @@
 import React from "react";
 import { Logo } from "./Logo";
-import {
-	Flex,
-	Menu,
-	MenuButton,
-	MenuGroup,
-	MenuItem,
-	MenuList,
-} from "@chakra-ui/react";
 import { SearchBar } from "./SearchBar";
+import { Flex, Menu, MenuButton } from "@chakra-ui/react";
 
 export const Navbar = () => {
 	return (
