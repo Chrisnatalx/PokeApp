@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-
 import { Context } from "../../Context/Context";
 import {
+	Badge,
 	Card,
 	CardBody,
 	Center,
@@ -12,18 +12,20 @@ import {
 } from "@chakra-ui/react";
 
 export const CardItem = () => {
-	const message = "Not Found";
+	const message = "Pokemon not found";
 
 	const { fetchedData } = useContext(Context);
+	console.log(fetchedData);
 
-	if (!fetchedData)
+	if (!fetchedData) {
 		return (
-			<Center>
-				<Text>{message}</Text>
+			<Center mt="20px">
+				<Badge colorScheme="red">{message}</Badge>
 			</Center>
 		);
+	}
 
-	const { name, sprites } = fetchedData;
+	const { name, sprites, weight, base_experience, order } = fetchedData;
 
 	const capitalize = (text) => {
 		return text.substring(0, 1).toUpperCase() + text.substring(1);
@@ -41,6 +43,9 @@ export const CardItem = () => {
 						<Stack mt="6" spacing="3">
 							<Heading size="md">{capitalize(name)}</Heading>
 						</Stack>
+						<Text> Weight: {weight}</Text>
+						<Text> Base xp : {base_experience}</Text>
+						<Text> Order : {order}</Text>
 					</CardBody>
 				</Card>
 			</Center>
